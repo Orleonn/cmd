@@ -34,6 +34,30 @@ inline std::ostream& clearl(std::ostream& s)
 	return s.write("\033[2K\r", 5);
 }
 
+// Clear from cursor position to end of line
+inline std::ostream& clearl_after(std::ostream& s)
+{
+	return s.write("\033[0K", 4);
+}
+
+// Clear from start of line to the cursor position
+inline std::ostream& clearl_before(std::ostream& s)
+{
+	return s.write("\033[1K", 4);
+}
+
+// Save cursor position
+inline std::ostream& save_cpos(std::ostream& s)
+{
+	return s.write("\033[s", 3);
+}
+
+// Restore the last saved cursor position
+inline std::ostream& restore_cpos(std::ostream& s)
+{
+	return s.write("\033[u", 3);
+}
+
 // Reset all modes (styles and colors)
 inline std::ostream& reset(std::ostream& s)
 {
