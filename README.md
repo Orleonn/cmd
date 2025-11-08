@@ -3,7 +3,7 @@ C++ stream manipulators for console control using ANSI/xterm control sequences.
 
 ## Provides std::ostream manipulators for:
 * Clearing the screen and lines
-* Cursor visibility control
+* Cursor visibility control and save/restore position
 * Set 8-bit and 24-bit (True Color) text and background colors
 * Use of various text modes (bold, underlined, inverted, etc.)
 
