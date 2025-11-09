@@ -25,7 +25,7 @@ using std::flush;
 // Clear screen and reset cursor
 inline std::ostream& clear(std::ostream& s)
 {
-	return s.write("\033[2J\033[H", 7);
+	return s.write("\033[2J\033[3J\033[H", 11);
 }
 
 // Clear from cursor position to end of screen
