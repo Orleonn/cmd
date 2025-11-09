@@ -28,6 +28,18 @@ inline std::ostream& clear(std::ostream& s)
 	return s.write("\033[2J\033[H", 7);
 }
 
+// Clear from cursor position to end of screen
+inline std::ostream& clear_after(std::ostream& s)
+{
+	return s.write("\033[0J", 4);
+}
+
+// Clear from start of screen to the cursor position
+inline std::ostream& clear_before(std::ostream& s)
+{
+	return s.write("\033[1J", 4);
+}
+
 // Clear line and return cursor
 inline std::ostream& clearl(std::ostream& s)
 {
